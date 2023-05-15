@@ -65,7 +65,7 @@ def request_time(client: Client):
     try:
         top_link = tree.xpath('//div[@class="inner_page"]/ul/li[1]/a/@href')[0]
         top_link = top_link.split('.', 1)[1]
-        top_link = 'view-source:https://doc.ssc.nic.in/Portal/LatestNews.' + top_link
+        top_link = 'https://sscnr.nic.in/newlook/site/Whatsnew.' + top_link
     except IndexError:
         top_link = ''
 
