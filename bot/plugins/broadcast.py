@@ -35,19 +35,19 @@ import subprocess
 def get_mod(client: Client):
     req_result = request_time(Client)
     if req_result[0] == 404:
-        mes2 = "[{}]: SSC Website has not been Updated.\nLast Notice - \n{}".format(
+        mes2 = "[{}]: SSCNR Website has not been Updated.\nLast Notice - \n{}".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"), req_result[1]
         )
-        logging.info("[*] SSC Website has not been Updated.")
+        logging.info("[*] SSCNR Website has not been Updated.")
         with open("bot/plugins/check.txt", "w+") as f:
             f.write(mes2)
             f.close()
     elif req_result[0] == 403:
         sendtelegram(2, AUTH_CHANNEL, "_", "<code>Request Timed Out,sscnr server down or too busy...</code>")
-        mes2 = "[{}]SSCNR Website has not been Updated.".format(
+        mes2 = "[{}]: SSCNR Website has not been Updated.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     elif req_result[0] == 200:
-        mes2 = "[{}]: SSC Website has not been Updated.\nLast Notice - \n{}".format(
+        mes2 = "[{}]: SSCNR Website has not been Updated.\nLast Notice - \n{}".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"), req_result[1]
         )
         t1 = threading.Thread(target=broadcast, args=(req_result,))
@@ -165,7 +165,7 @@ def broadcast(req_result):
     failed_users = []
     for i in range(0, (total)):
         try:
-            pp = "[{}]:<b>Latest update from SSC website</b><code>{}</code>\n{}".format(
+            pp = "[{}]:<b>Latest update from SSCNR website</b><code>{}</code>\n{}".format(
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 req_result[1],
                 req_result[2],
