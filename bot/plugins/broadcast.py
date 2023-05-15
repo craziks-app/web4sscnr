@@ -43,8 +43,8 @@ def get_mod(client: Client):
             f.write(mes2)
             f.close()
     elif req_result[0] == 403:
-        sendtelegram(2, AUTH_CHANNEL, "_", "<code>Request Timed Out,ssc server down or too busy...</code>")
-        mes2 = "[{}]: SSC Website has not been Updated.".format(
+        sendtelegram(2, AUTH_CHANNEL, "_", "<code>Request Timed Out,sscnr server down or too busy...</code>")
+        mes2 = "[{}]SSCNR Website has not been Updated.".format(
             datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     elif req_result[0] == 200:
         mes2 = "[{}]: SSC Website has not been Updated.\nLast Notice - \n{}".format(
@@ -76,7 +76,7 @@ def getDocId(notice):
             params={
                 "chat_id": AUTH_CHANNEL,
                 "document": notice,
-                "caption": "[Logs]<code> New Notice from official website of ssc.</code>",
+                "caption": "[Logs]<code> New Notice from official website of sscnr.</code>",
                 "parse_mode": "html",
             },
         )
