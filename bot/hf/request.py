@@ -63,7 +63,7 @@ def request_time(client: Client):
             logging.error(e)
             top_notice = "-Please check yourself-"
     try:
-        top_link = tree.xpath('//div[@class="inner_page"]/ul/li[1]/a')[0]
+        top_link = tree.xpath('//div[@class="inner_page"]/ul/li[1]/a/@href')[0]
         top_link = top_link.split('.', 1)[1]
         top_link = 'sscnr.' + top_link
     except IndexError:
