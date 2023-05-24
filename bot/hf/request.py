@@ -57,7 +57,7 @@ def request_time(client: Client):
     except IndexError:
         try:
             top_noticee = tree.xpath(
-                '//div[@class="inner_page"]/ul/li[1]/a/text()')
+                '//div[@class="inner_page"]/ul/li[1]/a/font/text()')
             top_notice = top_noticee[0]
         except Exception as e:
             logging.error(e)
@@ -65,7 +65,7 @@ def request_time(client: Client):
     try:
         top_link = tree.xpath('//div[@class="inner_page"]/ul/li[1]/a/@href')[0]
         top_link = top_link.split('.', 1)[1]
-        top_link = 'https://sscnr.nic.in/newlook' + top_link
+        top_link = 'sscnr.' + top_link
     except IndexError:
         top_link = ''
 
